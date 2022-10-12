@@ -1,0 +1,44 @@
+<!-- <h1 class="text-primary">{{header0}} {{header}}{{header1}}</h1> -->
+
+<div class="row container">
+
+    <div class="col-4"></div>
+    <div class="col-4" style="margin-top:100px ;">
+        <h1 class="text-primary text-center mt-5">LOGIN</h1>
+
+        <form [formGroup]="loginForm"action="" class="border border-primary m-5 p-5" (ngSubmit)="login()">
+    <div>
+        <!-- account number -->
+            <!-- <input (change)="accnoChange($event)"type="text" class="form-control" [placeholder]="accplaceholder"> -->
+            <!-- <input #accno type="text" class="form-control" [placeholder]="accplaceholder"> -->
+            <input formControlName="accno" name="accno"type="text" class="form-control" [placeholder]="accplaceholder">
+
+        </div>
+        <div *ngIf="this.loginForm.get('accno')?.touched&&this.loginForm.get('accno')?.errors" style="color:red">
+            Invalid account number
+        </div>
+
+<div>
+    <!-- <input (change)="passwdChange($event)" type="text"  class="form-control" type="password" placeholder="password"> -->
+    <!-- <input #passwd type="text"  class="form-control" type="password" placeholder="password"> -->
+    <input  formControlName="passwd" name="passwd" type="text"  class="form-control" type="password" placeholder="password">
+
+</div>
+<div *ngIf="this.loginForm.get('passwd')?.touched&&this.loginForm.get('passwd')?.errors" style="color:red">
+    Invalid password
+</div>
+
+<div>
+    <!-- //login button -->
+    <input type="submit" class="btn btn-primary text-center ms-5 mt-3" value="login">
+
+    <!-- <input (click)="login()" type="button" class="btn btn-primary text-center ms-5 mt-3" value="login"> -->
+</div>
+        </form>
+        <div>
+            <label for="">Not a user?click here to <a routerLink="register">register</a></label>
+        </div>
+    </div>
+
+    <div class="col-4"></div>
+</div>

@@ -1,0 +1,8 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    background: url('./assets/money-cash-cartoon-symbol-vector-24254994.jpg');
+background-size: cover;}
+th,td,tr{
+
+    border: 100px;
+}

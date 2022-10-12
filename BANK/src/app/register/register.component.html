@@ -1,0 +1,45 @@
+
+<div class="row container">
+
+    <div class="col-4"></div>
+    <div class="col-4" style="margin-top:100px ;">
+        <h1 class="text-primary text-center mt-5">register form</h1>
+
+        <form [formGroup]="registerForm"(ngSubmit)="register()" action="" class="border border-primary m-5 p-5">
+    <div>
+<!--  -->
+<input formControlName="accno" name="accno"type="text" class="form-control" placeholder="account number">
+
+</div>
+<div *ngIf="this.registerForm.get('accno')?.touched&&this.registerForm.get('accno')?.errors" style="color:red">
+    Invalid account number
+</div>
+
+<input formControlName="uname" name="uname"type="text" class="form-control" placeholder="username">
+<div *ngIf="this.registerForm.get('uname')?.touched&&this.registerForm.get('uname')?.errors" style="color:red">
+    Invalid username
+</div>
+        <!-- account number -->
+            <!-- <input (change)="accnoChange($event)"type="text" class="form-control" [placeholder]="accplaceholder"> -->
+            <!-- <input #accno type="text" class="form-control" [placeholder]="accplaceholder"> -->
+           
+<div>
+    <!-- <input (change)="passwdChange($event)" type="text"  class="form-control" type="password" placeholder="password"> -->
+    <!-- <input #passwd type="text"  class="form-control" type="password" placeholder="password"> -->
+    <input  formControlName="passwd" name="passwd" type="text"  class="form-control" type="password" placeholder="password">
+
+</div>
+<div *ngIf="this.registerForm.get('passwd')?.touched&&this.registerForm.get('passwd')?.errors" style="color:red">
+    Invalid password
+</div>
+<div>
+    <input  type="submit" class="btn btn-primary text-center ms-5 mt-3" value="register">
+</div>
+        </form>
+        <div>
+            <label for="">Already a user?click here to <a routerLink="">log in</a></label>
+        </div>
+    </div>
+
+    <div class="col-4"></div>
+</div>
